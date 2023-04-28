@@ -1,0 +1,88 @@
+S15 - Function - CYP (p 270)
+1. A _________ is a self-contained program segment that carries out a specific, well defined
+task.
+	function
+
+2. Arguments appearing in the parentheses are termed as _______.
+	actual parameter
+
+3. If the return is ignored, control passes to the calling program when the closing braces of
+the code block are encountered. This is termed as ____________
+	void function
+
+4. The function, which calls another function, is known as the ________ and the function,
+which is being called, is known as the ________
+	calling function, called function
+
+5. A _______ is a function declaration that specifies the data types of the arguments
+	prototype
+
+6. _________ can be referred to only by statements that are inside the code block, which
+declares them.
+	local variable
+
+7. ________ are visible to the entire program, and can be used by any piece of code. 
+	global variable
+
+8. _________ govern whether one piece of code knows about or has access to another
+piece of code or data
+	scope rules
+
+9. Arguments are said to be passed ________ when the value of the variables are passed
+to the called function
+	by value
+
+10. In_________, the function is allowed access to the actual memory location of the argument
+	call by references
+
+
+
+=============================================================================================
+s17 - String - CYP (p 290)
+
+1. Strings are terminated by the _________ character
+	null
+
+2. The number of characters that can be input into char arr[15] is _________.
+	14
+
+3. Modification of the string pointer can lead to data loss. (True / False) True
+
+4. The character is used to print a new line in printf() 	\n
+
+5. To use the strcat() function, the ________ header file must be included in the program.
+	string.h
+
+6. strcmp() returns ___________ if two strings are identical.	0
+
+7. When an array is passed to a function, only its ___________ is passed.
+	address
+
+
+==============================================================================================
+
+STRUCTURE 
+
+1. dinh nghia kieu du lieu cau truc 'struct SINHVIEN'
+	struct SINHVIEN {
+		char id[20];
+		char hoten[30];
+		int namSinh;
+		float diemKQ;
+	};
+
+2. khai bao bien s1, s2 co kieu cau truc 'struct SINHVIEN'
+	struct SINHVIEN s1,s2;
+
+
+3. gan gia tri /khoi tao gia tri cho s1
+	strcpy(s1.id,"student123"); 	//s1.id = "student123";
+	strcpy(s1.hoten, "nguyen hung");	//s1.hoten = "nguyen hung";
+	s1.namSinh = 2004;
+	s1.diemKQ = 60;
+
+
+
+
+	
+	

@@ -1,0 +1,66 @@
+S4:
+1. A. Operators
+2. A. Expression
+3. B. Precedence
+4. B. Mixed Mode Expression
+5. A. Cast 
+6. A. Logical Operators 
+7. B. &, |, ~ and ^
+8. C. Parentheses
+
+S6:
+1. A. printf() and scanf() 
+2. B. pointers
+3. B. format specifier
+4. A. % 
+5. true
+6. C. Buffer
+7. false
+
+s7:
+1. A. Conditional 
+2. true
+3. B. Nested if
+4. C. switch 
+5. B. statement 2
+
+
+
+
+
+s9: LOOP 
+- for
+- while
+- do while
+- break
+- continue
+
+main() - ham bat dau chuong trinh C
+exit() - ham ket thuc chuong trinh
+
+*****************************************************
+Cu phap vong lap FOR
+for(initilization expression ; test expression; update expression)
+{
+	for Loop body
+}
+*****************************************************
+initilization expression : bieu thuc khoi tao bien dem vong lap (i=0)
+test expression: bt dieu kien, kiem tra dk thuc hien vong lap (i<30)
+update expression : bt cap nhat lai bien dem (i++)
+for Loop body: lenh thi hanh trong vong lap
+ 
+vi du, in thong bao "Hello" 30 lan
+for(int i=0 ; i<30; i++) {
+	printf("Hello");
+}
+
+
+
+
+
+
+
+
+
+

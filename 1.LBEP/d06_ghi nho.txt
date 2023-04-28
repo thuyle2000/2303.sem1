@@ -1,0 +1,67 @@
+A. S9 - Loop - CYP p166
+
+1. _________ allows a set of instructions to be performed until a certain condition is
+reached. 
+	A./ Loop
+
+2. _________ loops check the condition at the top of the loop which means the loop code is
+not executed, if the condition is false at the start.
+	A./ while loop 
+
+
+3. A ___________ is used to separate the three parts of the expression in a for loop.
+	B./ semicolon
+
+4. The _________ loop checks its condition at the end of the loop, that is after the loop has been executed.
+	C./ do..while loop
+
+5. The _______ statement causes execution to return to the point at which the call to thefunction was made.
+	B./ return
+
+6. The _______ statement violates the rules of a strictly structured programming language.
+	C./ goto 
+
+7. The _________ function causes immediate termination of the program and control is transferred back to the operating system
+	A./ exit
+
+
+
+
+
+B. Nhac lai bieu thuc dieu kien tam phan:
+- cu phap: (bt dieu kien) ? bt1 : bt2
+- gia tri cua bt tam phan se la:
+	- bt1 neu (bt dieu kien) la true
+	- bt2 neu (bt dieu kien) la false
+
+vi du: start = (n1%2==0)? n1+1: n1;
+	=> start = n1+1 neu 	n1 la so chan, hoac
+			= n1 		n1 la so le
+
+
+
+C. Lap trinh Array (mang)
+- mang la bien bo nho dac biet da tri, moi gia tri duoc truy xuat thong qua ten bien, ket hop chi so index tuong ung voi vi tri (index luon bat dau tu 0)
+
+vi du: 
+1. khai bao mang:
+- khai bao mang a chua 10 so nguyen: 
+	int a[10] = {1,4,7,9,12,8,7,99,10,9};
+- khai bao mang b chua 5 so thuc:
+	float b[5] = {0.23, 9.67868, 7.1, 2, 123.87};
+- khai bao mang c chua 20 ky tu:		
+	char c[20] = "nguyen van a";
+
+
+2. truy cap cac phan tu trong mang: ghi ten mang + chi so index (tuong ung vi tri cua pt - bat dau tu 0)
+- truy xuat phan tu dau tien cua mang a: a[0] 	(=1)
+- truy cap phan tu thu 3 cua mang b: b[2] 	(=7.1)
+- truy cap phan tu cuoi cua mang c: c[11]		(='a')
+
+ 	
+
+
+
+
+
+	

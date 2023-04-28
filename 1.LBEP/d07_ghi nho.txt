@@ -1,0 +1,24 @@
+S11 - Array - CYP (page 194)
+
+1. An ________ is a collection of data elements of the same type that are referred by a common name.
+	B. Array
+
+2. Each member of an array is identified by the unique _______ or _______ assigned to it.
+ 	A. Index, Subscript 
+
+
+3. An array name and a variable name can be the same. (T/F) F
+
+4. Each element of an array cannot be used where a variable is allowed or required. (T/F) F
+
+5. Two arrays, even if they are of the same type and size, cannot be tested for __________.
+	C. Equality 
+
+6. String can be defined as a character type array, which is terminated by a _____ character.
+	C. NULL
+
+7. Arrays can have more than one dimension. (T/F) T
+
+8. The comparison of two strings is done with the help of _______ whereas the interchanging is done by ________.
+	A. strcmp,strcpy 
+

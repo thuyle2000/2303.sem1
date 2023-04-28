@@ -1,0 +1,47 @@
+functions:
+- main() , printf(), scanf(), gets(), getchar(), putchar(), puts(), 
+  fflush(), system(), fseek() 
+  strcpy(), strstr(), strchr(), strcat(), strcmp(), strlen()
+
+
+- định nghĩa hàm:
+	type function_name(args) {
+		body of function
+	}
+
+	ví dụ, lập trình hàm cộng 2 số nguyên như sau:
+	int sum(int a, int b){
+		return a+b;
+	}
+	phân tích:
+	- tên hàm (function_name) : 		sum
+	- kiểu dữ liệu của hàm (type) : 	int
+	- tham số hình thức (formal parameters) của hàm : (int) a và (int)b
+
+
+- sử dụng (gọi) hàm (invoke / call function)
+	vd, muốn thực hiện phép cộng 5 và 12
+	và có biến n1=5, và n2 =12 
+	=> có thể thực hiện phép cộng bằng cách gọi hàm sum theo những cách sau:
+		int kq = sum(n1, n2)
+		int kq = sum(5, 12)
+		int kq = sum(n1, n1+7)
+	- n1,n2,5,12, n1+7 : gọi là tham số thực tế (actual parameter)
+
+- nguyên mẫu của hàm (prototype):
+	type function_name(args);
+	 
+	vd, trong trường hợp trên, nguyên mẫu của hàm có thể đc viết : 
+	int sum(int a, int b);
+	int sum(int, int);
+
+
+- phân loại biến bộ nhớ:
+	biến cục bộ (local variable): 	
+		được khai báo bên trong chương trinh hàm
+		tham số hình thức (formal parameter) của chương trinh hàm cũng là 
+		biến cục bộ của hàm
+	biến toàn cục (global variable):
+		được khai báo bên ngoài các chương trình hàm
+	
+ 

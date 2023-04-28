@@ -1,0 +1,19 @@
+- cài đặt vscode : 
+1. download từ official website: https://code.visualstudio.com/Download
+2. chọn đúng dòng hệ điều hành (Windows / Linux / Macs)
+3. sau khi download thành công, chạy chương trình setup
+
+
+- tổ chức thư mục học tập:
+1. chọn ổ dĩa làm việc (C: hoặc D:, E: ...), ví dụ D:
+2. tạo thư mục D:\Aptech 
+3. trong thư mục Aptech, tạo thư mục 'sem1'
+4. trong thư mục sem1, tạo thư mục '1.LBEP' 
+
+
+- setup môi trường làm việc:
+1. install extension:
+   - C/C++
+   - Code Runner
+
+2. install Compiler
