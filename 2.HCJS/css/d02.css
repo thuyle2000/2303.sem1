@@ -1,0 +1,37 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    color: crimson;
+}
+
+h2{
+    color: cornflowerblue;
+}
+
+h3{
+    color: mediumorchid;
+}
+
+h4{
+    color: blue;
+}
+
+
+.flan{
+    width: 50%;
+}
+
+.three-col{
+    columns: 3;
+    text-align: center;
+}
+.bg{
+    background-color: brown;
+    color: antiquewhite;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
