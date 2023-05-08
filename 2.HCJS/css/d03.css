@@ -1,0 +1,41 @@
+/* universal selector */
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* type selector */
+a{
+    text-decoration: none;
+    padding: 10px;
+}
+
+h2{
+    color: sienna;
+    text-shadow: -3px -3px 3px gray;
+}
+
+/* class selector */
+.hinh{
+    width: 50vw;
+    padding: 20px 10px;
+}
+
+/* id selector */
+#main{
+    color: red;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* pseudo-class */
+h2::first-letter{
+    font-size: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: blueviolet;
+}
+
+a:hover{
+    color: antiquewhite;
+    background-color: green;
+}
