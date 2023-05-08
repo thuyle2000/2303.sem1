@@ -3,6 +3,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 /* type selector */
 a{
     text-decoration: none;
@@ -16,8 +17,18 @@ h2{
 
 /* class selector */
 .hinh{
-    width: 50vw;
-    padding: 20px 10px;
+    width: 30vw;
+    padding: 20px 40px;
+    background-color: antiquewhite;
+    display: block;
+    margin: auto;
+
+    border-color: red yellowgreen blue orange;
+    border-width: medium;
+    border-style: dashed inset double solid ;
+    border-radius: 12px;
+
+    box-shadow: 3px 3px 3px lightslategray;
 }
 
 /* id selector */
@@ -25,6 +36,12 @@ h2{
     color: red;
     padding-right: 20px;
     padding-left: 20px;
+
+}
+
+
+div#menu{
+    padding-bottom: 10px;
 }
 
 /* pseudo-class */
