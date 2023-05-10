@@ -9,24 +9,17 @@ header{
     overflow: hidden;
 }
 .logo{
-    width: 10%;
+    width:50px;
     float: left;
 }
 
 .blink {
     display: inline;
-    animation: blinker 1.5s linear infinite;
     color: brown;
     font-family: sans-serif;
     font-weight: bolder;
-
 }
 
-@keyframes blinker {
-    50% {
-        opacity: 0;
-    }
-}
 /* ket thuc css cua khoi header */
 
 /* css cua khoi menu */
@@ -40,7 +33,7 @@ nav>ul>li{
 
 nav>ul>li>a{
     text-decoration: none;
-    padding: 5px 20px;
+    padding: 5px 10px;
     transition-property: color;
     transition-property: background-color;
     transition-duration: 2s;
@@ -56,12 +49,28 @@ nav>ul>li>a:hover{
 /* css cua khoi section */
 section{
     width: 70%;
+    background-color: lightgoldenrodyellow;
+    text-align: justify;
+    padding: 10px 30px;
+    float: left;;
+
+}
+/* ketthuc css cua khoi section */
+
+/* css cua khoi aside : quang cao */
+aside{
+    float: right;
+    width: 20%;
 }
 
-
+aside img{
+    width: 90%;
+}
+/* ketthuccss cua khoi aside */
 
 /* css cua khoi footer */
 footer{
+    clear: both;
     margin-top: 30px;
     border-top: inset green medium;
     padding-top: 20px;
