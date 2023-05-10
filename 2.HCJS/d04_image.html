@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>images</title>
+    <style>
+        .hinh {
+            width: 45%;
+            border: solid thin salmon;
+            background-color: antiquewhite;
+        }
+
+        .hinh2 {
+            opacity: 0.3;
+            width: 70%;
+            position: relative;
+            left: 100px;
+            top: 30px;
+            border: inset thick green;
+        }
+
+        .hinh3 {
+            opacity: .3;
+            width: 60%;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            border: inset thick green;
+        }
+
+        .hinh4 {
+            opacity: 1;
+            width: 60%;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            border: inset thick green;
+        }
+
+        .khoi3{
+            position: relative;
+            top: 100px;
+        }
+
+        .khoi4{
+            position: relative;
+            top: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>IMAGE HTML Demo</h2>
+    <hr>
+    <div>
+        <img src="images/fruits.png" alt="" class="hinh">
+        <img src="images/fruits 2.png" alt="" class="hinh">
+    </div>
+    <hr>
+    <div>
+        <h2>Relative Position (top:100;left:30), Opacity = 0.3</h2>
+        <img src="images/fruits.png" alt="" class="hinh">
+        <img src="images/fruits 2.png" alt="" class="hinh2">
+    </div>
+
+    <hr>
+    <div class="khoi3">
+        <h2>Absolute Position (top:100;left:30), Opacity = 0.3</h2>
+        <img src="images/fruits.png" alt="" class="hinh">
+        <img src="images/fruits 2.png" alt="" class="hinh3">
+    </div>
+
+    <hr>
+    <div class="khoi4" >
+        <h2>Absolute Position (top:100;left:30), Opacity = 1</h2>
+        <img src="images/fruits.png" alt="" class="hinh">
+        <img src="images/fruits 2.png" alt="" class="hinh4">
+    </div>
+</body>
+
+</html>
