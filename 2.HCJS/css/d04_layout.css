@@ -29,6 +29,36 @@ header{
 }
 /* ket thuc css cua khoi header */
 
+/* css cua khoi menu */
+nav>ul{
+    list-style-type: none;
+}
+
+nav>ul>li{
+    display: inline-block;
+}
+
+nav>ul>li>a{
+    text-decoration: none;
+    padding: 5px 20px;
+    transition-property: color;
+    transition-property: background-color;
+    transition-duration: 2s;
+}
+nav>ul>li>a:hover{
+    color: red;
+    background-color: wheat;
+}
+
+/* let thuc css cua khoi menu */
+
+
+/* css cua khoi section */
+section{
+    width: 70%;
+}
+
+
 
 /* css cua khoi footer */
 footer{
