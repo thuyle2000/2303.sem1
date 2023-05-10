@@ -1,0 +1,44 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* css cua khoi header */
+header{
+    padding-bottom: 10px;
+    border-bottom: groove gray medium ;
+    overflow: hidden;
+}
+.logo{
+    width: 10%;
+    float: left;
+}
+
+.blink {
+    display: inline;
+    animation: blinker 1.5s linear infinite;
+    color: brown;
+    font-family: sans-serif;
+    font-weight: bolder;
+
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+/* ket thuc css cua khoi header */
+
+
+/* css cua khoi footer */
+footer{
+    margin-top: 30px;
+    border-top: inset green medium;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: antiquewhite;
+
+    text-align: center;
+}
+
+/* ket thuc css cua khoi footer */
