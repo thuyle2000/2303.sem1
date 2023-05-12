@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table-css</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h2{
+            color: red;
+        }
+
+        table{
+            border: inset 10px lightblue ;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+
+        caption{
+            font-weight: bolder;
+            color: green;
+            font-size: 1.3em;
+        }
+
+        th{
+            color: coral;
+        }
+
+        td, th{
+            padding: 5px 10px;
+        }
+
+        tbody>tr:nth-child(odd){
+            background-color: wheat;
+        }
+
+        tbody td:first-child{
+            color: brown;
+        }
+
+        tbody td:nth-child(3){
+            color: blue;
+        }
+
+        tbody td:last-child{
+            text-align: right;
+        }
+
+        tbody tr:hover{
+            background-color: lightgray;
+        }
+
+        .hot{
+            color: blueviolet;
+            font-weight: bold;
+            text-align: right;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Table HTML5 Demo</h2>
+    <hr>
+
+    <!-- tao 1 bang: gom co 4 dong, 5 cot (table>tr*4>td*5) -->
+
+    <table >
+        <caption>Danh sach sinh vien</caption>
+        <thead>
+            <tr>
+                <th>stt</th>
+                <th>ho ten</th>
+                <th>gioi tinh</th>
+                <th>email</th>
+                <th>so dien thoai</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Ha Tan Doanh</td>
+                <td>nam</td>
+                <td>doanh@fpt.edu.vn</td>
+                <td>113</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Bui Tran Nguyen Hung</td>
+                <td>N/A</td>
+                <td>hung@fpt.edu.vn</td>
+                <td>119</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Thi Nhung</td>
+                <td>nu</td>
+                <td>nhung@fpt.edu.vn</td>
+                <td>911</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Mong Lin</td>
+                <td>nu</td>
+                <td>lin@fpt.edu.vn</td>
+                <td>911119</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Nhat Hoang</td>
+                <td>nam</td>
+                <td>hoang@fpt.edu.vn</td>
+                <td>123456</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2" rowspan="2" class="hot">Tong ket</td>
+
+                <td colspan="3">
+                    so sv nu: 2
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    so sv nam: 3
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

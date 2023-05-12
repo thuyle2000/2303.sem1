@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+
+<body>
+    <h2>Table HTML5 Demo</h2>
+    <hr>
+
+    <!-- tao 1 bang: gom co 4 dong, 5 cot (table>tr*4>td*5) -->
+
+    <table border="1">
+        <caption>Danh sach sinh vien</caption>
+        <thead>
+            <tr>
+                <th>stt</th>
+                <th>ho ten</th>
+                <th>gioi tinh</th>
+                <th>email</th>
+                <th>so dien thoai</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Ha Tan Doanh</td>
+                <td>nam</td>
+                <td>doanh@fpt.edu.vn</td>
+                <td>113</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Bui Tran Nguyen Hung</td>
+                <td>N/A</td>
+                <td>hung@fpt.edu.vn</td>
+                <td>119</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Thi Nhung</td>
+                <td>nu</td>
+                <td>nhung@fpt.edu.vn</td>
+                <td>911</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2" rowspan="2">Tong ket</td>
+
+                <td colspan="3">
+                    so sv nu: 1
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    so sv nam: 2
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
