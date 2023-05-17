@@ -36,6 +36,7 @@ input:invalid {
     background-color: aquamarine;
 }
 
+button,
 input[type=submit],
 input[type=reset],
 input[type=button] {
