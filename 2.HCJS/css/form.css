@@ -1,0 +1,65 @@
+/* dinh nghia cac css style cho form nhap lieu */
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+    background-color: antiquewhite;
+    opacity: .7;
+    width: fit-content;
+    padding: 10px;
+}
+
+form div {
+    margin: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+div>span {
+    color: red;
+    font-weight: bolder;
+    padding-left: 3px;
+}
+
+input:required {
+    border: none;
+    border-bottom: red double medium;
+}
+
+input:required:invalid,
+input:invalid {
+    background-color: aquamarine;
+}
+
+input[type=submit],
+input[type=reset],
+input[type=button] {
+    padding: 5px 20px;
+    border-radius: 15px;
+    border: none;
+    color: wheat;
+    font-weight: bold;
+    background-color: dodgerblue;
+}
+
+input[type=submit] {
+    background-color: red;
+}
+
+input[type=reset] {
+    background-color: blue;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+}
+a:hover{
+    color: crimson;
+}

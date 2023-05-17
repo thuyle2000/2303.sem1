@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>HTML5 FORM Demo</h2>
+    <hr>
+    <h3>Sign-In</h3>
+    <!-- khai bao mau bieu nhap lieu = the FORM -->
+    <form action="d05_table_css.html">
+        <div>
+            <label for="">Username </label>
+            <input type="text" name="uid" id="uid" required
+            value="aptech"><span>*</span>
+        </div>
+        <div>
+            <label for="">Password: </label>
+            <input type="password" name="pass" id="pass" required
+            placeholder="nhap mat khau" 
+            pattern="[0-9]{3,5}"
+            title="nhap tu 3-5 so bat ky"><span>*</span>
+        </div>
+        <div>
+            <label for="">email</label>
+            <input type="email" name="mail" id="mail">
+        </div>
+
+        <div>
+            <label for="">remember me </label>
+            <input type="checkbox" name="rem" id="rem" checked value="true"> 
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <a href="">Sign-up Here</a>
+        </div>
+
+    </form>
+
+    <!-- ket thuc mau bieu nhap lieu -->
+</body>
+</html>
