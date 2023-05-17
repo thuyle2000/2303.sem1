@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>prompt()/eval() javascript demo</h2>
+    <hr>
+    <button type="button" id="btnQuestion"> Question </button>
+</body>
+
+<script>
+    //lap trinh cho su kien click tren button co id=[btnQuestion]
+    document.getElementById("btnQuestion").onclick = function () {
+        let bt = prompt("input expression: ", "2**4 + 10-5");
+
+        if (bt != null) {
+            let kq = eval(bt);
+            alert(`${bt} = ${kq}`)
+        }
+    }
+</script>
+
+</html>
