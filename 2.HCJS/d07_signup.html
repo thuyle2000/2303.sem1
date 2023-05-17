@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <hr>
+    <form action="d05_signin.html" id="formREG">
+        <div>
+            <label for="">username</label>
+            <input type="text" name="uid" id="uid" value="aptech" required>
+        </div>
+
+        <div>
+            <label for="">password</label>
+            <input type="password" name="pass" id="pass" value="123" required>
+        </div>
+
+        <div>
+            <label for="">password confirm</label>
+            <input type="password" name="pass2" id="pass2" value="123" required>
+        </div>
+
+        <div>
+            <label for="">email</label>
+            <input type="email" name="mail" id="mail" value="aptech@fpt.edu.vn" >
+        </div>
+        <div>
+            <label for="">gender</label>
+            <input type="radio" name="rgen" id="male" value="male"> male
+            <input type="radio" name="rgen" id="female" value="female" checked> female
+        </div>
+
+        <div>
+            <label for="">languages</label>
+            <input type="checkbox" name="lanEN" id="lanEN" value="en" checked> EN -
+            <input type="checkbox" name="lanFR" id="lanFR" value="fr"> FR -
+            <input type="checkbox" name="lnJP" id="lanJP" value="jp" checked> JP -
+        </div>
+
+        <div>
+            <label for="">location</label>
+            <select name="location" id="location" required>
+                <option value="">---select a city---</option>
+                <option value="SG">Saigon</option>
+                <option value="HN">Hanoi</option>
+                <option value="HU">Hue</option>
+                <option value="DN">Danang</option>
+                <option value="CT">Cantho</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="">birthday</label>
+            <input type="date" name="dob" id="dob" value="2004-04-29">
+        </div>
+
+        <div>
+            <label for="">comment</label>
+            <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+        </div>
+        
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</body>
+</html>
