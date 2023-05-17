@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+
+    <!-- nhung thu vien jquery vo trang web -->
+    <script src="js/jquery-3.7.0.min.js"></script>
+
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>JQuery Demo</h2>
+    <hr>
+    <img src="images/fruits orange.png" alt="">
+</body>
+
+<script>
+    //cac doan ma jquery se dc chay sau khi trang web load thanh cong 
+    $(document).ready(
+        function () {
+            //lap trinh cho hieu ung hover, doi voi img duy nhat cua trang
+            $("img").hover(
+                //mouse-in
+                function () {
+                    $("img").attr("src", "images/fruits cherry.png");
+                },
+                //mouse out
+                function () {
+                    $("img").attr("src", "images/fruits orange.png");
+                }
+            );
+        }
+    );
+</script>
+
+</html>
