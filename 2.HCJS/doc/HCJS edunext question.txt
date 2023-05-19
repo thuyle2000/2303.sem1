@@ -2,6 +2,13 @@ LINK EDUNEXT: https://fai-edunext.fpt.edu.vn/home
 
 
 s21+s22 (Tue, 29-May-2023)
+		G1: 1+2	/ G6
+		G2: 3	/ G7
+		G3: 4	/ G1
+		G4: 5	/ G2
+		G5: 6	/ G3
+		G6: 7	/ G4
+		G7: 8	/ G5
 
 s21 - Mobile Web app
 	1/ List of mobile Platforms?
@@ -15,8 +22,15 @@ s22 - Canvas & javascript
 	7/ How to use canvas with image, with text? How to use Transparency for Text in Canvas?
 	8/ How to use Event with jQuery? 
 
-
+==============================================================================================
 s23+24 (Thu, 31-May-2023 )
+		G1: 1	/ G6
+		G2: 2	/ G7
+		G3: 3	/ G1
+		G4: 4	/ G2
+		G5: 5	/ G3
+		G6: 6	/ G4
+		G7: 7+8	/ G5
 S23 - HTML5 Web storage
 	1/ Explain Web storage in HTML5
 	2/ Explain session storage
