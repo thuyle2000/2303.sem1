@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>Javascript Array</h2>
+    <hr>
+    <form action="" name="formINPUT" id="formINPUT">
+        <div>
+            <label for="">flower</label>
+            <input type="text" name="fname" id="fname" placeholder="input name" pattern="[a-zA-Z0-9 ]+" required>
+        </div>
+        <div>
+            <input type="submit" value="ADD" id="btnADD" name="btnADD">
+            <input type="button" value="LIST" id="btnLIST" name="btnLIST">
+            <input type="button" value="REMOVE" id="btnREMOVE" name="btnREMOVE" style="background-color:darkorange;">
+        </div>
+    </form>
+    <div>
+        <p id="listing"></p>
+    </div>
+</body>
+<script>
+    //khai bao bien mang toan cuc flowers[]
+    let flowers = [];
+
+    //lap trinh cho su kien CLICK tren button [btnADD](tuong duong submit)
+    document.getElementById("formINPUT").onsubmit = function (e) {
+        //vo hieu hoa chuc nang chuyen trang cua nut submit
+        e.preventDefault();
+
+        //lay du lieu nhap trong o [fname]
+        let flowerName = document.getElementById("fname").value.trim();
+
+        //luu vo cuoi mang [flowers]
+        flowers.push(flowerName);
+    }
+
+
+    //lap trinh cho su kien click tren button [btnLIST]
+    document.getElementById("btnLIST").onclick = function () {
+        if (flowers.length > 0) {
+            //xuat danh sach cac loai hoa vo doan van co id = [listing]
+            document.getElementById("listing").innerHTML = flowers.join(" - ");
+        }
+    }
+
+
+    //lap trinh cho su kien click tren button [btnREMOVE]
+    document.getElementById("btnREMOVE").onclick = function () {
+        if (flowers.length > 0) {
+            //xoa ten loai hoa nhap trong o [fname] ra khoi mang [listing]
+            let removeFlower = document.getElementById("fname").value;
+
+            //tim vi tri index cua hoa muon xoa trong mang
+            let index = -1;
+
+            for (let i = 0; i < flowers.length; i++) {
+                if(flowers[i]==removeFlower){
+                    index = i;
+                    break;
+                }
+            }
+
+            if(index >= 0){
+                //xoa 1 phan tu trong mang [flowers] tai vi tri index
+                flowers.splice(index,1); 
+                alert("remove success!")
+            }
+            else{
+                alert("not found !");
+            }
+            
+        }
+    }
+</script>
+
+</html>
