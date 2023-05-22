@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>Javascript Object</h2>
+    <hr>
+
+    <form action="">
+        <div>
+            <label for="">input radius</label>
+            <input type="number" name="radius" id="radius" min="1" value="5" required>
+        </div>
+        <hr>
+        <div>
+            <label for="">Area</label>
+            <input type="text" name="area" id="area" readonly>
+        </div>
+        <div>
+            <label for="">Peripherial</label>
+            <input type="text" name="peripheral" id="peripheral" readonly>
+        </div>        
+    </form>
+</body>
+<script>
+    /*dinh nghia mau doi tuong (template) hinh tron [CIRCLE], co:
+        - thuoc tinh ban kinh (radius)
+        - phuong thuc tinh dien tich (area) va chu vi (peripheral)
+    */
+    function CIRCLE(r) {
+        this.radius = r;
+        this.area = function () {
+            return Math.PI * this.radius * this.radius;
+        }
+        this.peripherial = function () {
+            return 2* Math.PI * this.radius ;
+        }
+    }
+
+    //lap trinh cho su kien change value cua o input co id=[radius]
+    document.getElementById("radius").onchange = function(){
+
+        //lay gia tri ban kinh nhap trong o co id = [radius]
+        let bk = parseInt(document.getElementById("radius").value);
+
+        //tao 1 doi tuong hinh tron 
+        let hinh_tron = new CIRCLE(bk);
+
+        //tinh dien tich va => o [area]
+        document.getElementById("area").value = hinh_tron.area();
+
+        //tinh chu vi va => o [peripheral]
+        document.getElementById("peripheral").value = hinh_tron.peripherial();
+
+    }
+</script>
+
+</html>
