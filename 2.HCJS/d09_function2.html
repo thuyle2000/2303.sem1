@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>Javascript Parameterized Function </h2>
+    <hr>
+    <div>
+        <label for="">input a number</label>
+        <input type="number" name="numberX" id="numberX" value="5" min="2" max="20" onchange="calc()">
+        <hr>
+
+        <p id="result"></p>
+    </div>
+</body>
+<script>
+    // lap trinh cho ham tinh giai thua: 
+    // ham co 1 doi so nguyen n va tra ve giai thua cua n
+    function factorial(n) {
+        let r = 1;
+        for(let i=2; i<=n; i++ ){
+            r *= i;
+        }
+        return r;
+    }
+
+    //lap trinh cho su kien thay doi gia tri trong o [numberX]
+    function calc() {
+       //lay gia tri trong o nhap numberX
+       let x = document.getElementById("numberX").value;
+    
+       //goi ham factorial() de tinh giai thua cua x, cat ket qua vo kq  
+       let kq = factorial(x);
+
+       //hien thi kq trong paragraph co id=[result]
+       document.getElementById("result").innerHTML=`>> ${x}! = ${kq}`
+
+    }
+
+</script>
+</html>
