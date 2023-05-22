@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>function</title>
     <link rel="stylesheet" href="css/form.css">
 </head>
+
 <body>
     <h2>Javascript Parameterized Function</h2>
     <hr>
@@ -19,9 +21,49 @@
         <input type="number" name="numberY" id="numberY" value="34">
     </div>
     <div>
-        <input type="button" value="CASIO">
+        <input type="button" value="CASIO" id="btnCASIO">
     </div>
     <hr>
     <p id="result"></p>
 </body>
+<script>
+    //lap trinh ham casio(), tinh va tra ve ket qua cua phep toan + - * hoac / tren 2 doi so x va y
+    function casio(x, y, op) {
+        switch (op) {
+            case '+': return x + y; break;
+            case '-': return x - y; break;
+            case '*': return x * y; break;
+            case '/': return x / y; break;
+        }
+        return 'N/A';
+    }
+
+    //lap trinh ham calc(), xu ly su kien click tren button co nhan (value)=[CASIO], id=[btnCASIO]
+    document.getElementById("btnCASIO").onclick = function () {
+        //lay gia tri cua o X -> doi thanh so nguyen ( parseInt() )
+        let n1 = parseInt( document.getElementById("numberX").value );
+
+        //lay gia tri cua o Y
+        let n2 = parseInt( document.getElementById("numberY").value );
+
+        //tao mang a[], chua ket qua cua cac phep toan so hoc tren 2 so n1 va n2
+        let a = [];
+        let kq = 0;
+
+        kq = casio(n1, n2, '+');
+        a.push(`${n1} + ${n2} = ${kq}`);
+
+        kq = casio(n1, n2, '-');
+        a.push(`${n1} - ${n2} = ${kq}`);
+
+        kq = casio(n1, n2, '*');
+        a.push(`${n1} * ${n2} = ${kq}`);
+
+        //xuat noi dung mang a[] vo paragraph ci id =[result]
+        document.getElementById("result").innerHTML = a.join("<br>");
+
+    }
+
+</script>
+
 </html>
