@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>Javascript String Object</h2>
+    <hr>
+    <div>
+        <label for="">Input Name</label>
+        <input type="text" name="fullName" id="fullName" value="  ha  The  DOANH  ">
+    </div>
+
+    <div>
+        <input type="button" value="TEST" name="btnTEST" id="btnTEST">
+    </div>
+
+    <hr>
+    <div id="result">
+
+    </div>
+
+    <script>
+        //lap trinh cho su kien Click cua button co id=[btnTEST]
+        document.getElementById("btnTEST").onclick = function(){
+
+            //lay du lieu nhap trong o text, co id = [fullName]
+            let fname = new String(document.getElementById("fullName").value);
+
+            //tao bien mang a[] chua ket qua cua cac xu ly chuoi fname
+            let a =[];
+
+            //luu ket qua xu ly chuoi vo mang a
+            a.push(`Chuoi ky tu: [${fname}]`);
+
+            a.push(` >> length = ${fname.length}`); //so ky tu
+            a.push(` >> toUpperCase() = ${fname.toUpperCase()}`);
+            a.push(` >> toLocaleLowerCase() = ${fname.toLocaleLowerCase()}`);
+
+            a.push(`>>indexOf('the') = ${fname.indexOf('the')} `);
+            a.push(`>>indexOf('The') = ${fname.indexOf('The')} `);
+
+            a.push(`>>indexOf('h') = ${fname.indexOf('h')} `);
+            a.push(`>>lastIndexOf('h') = ${fname.lastIndexOf('h')} `);
+
+            a.push(`>>split() = ${fname.split(' ')}`)
+            a.push(`>>split().length = ${fname.split(' ').length}`)
+
+            a.push(`>>substring(6) = ${fname.substring(6)}`)
+            a.push(`>>substring(6,9) = ${fname.substring(6,9)}`)
+
+            //xuat noi dung cua mang a[] ra khoi co id='result'
+            document.getElementById("result").innerHTML = a.join("<br>")
+         }
+    </script>
+</body>
+</html>

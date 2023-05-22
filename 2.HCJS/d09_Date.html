@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>Javascript Date Object</h2>
+    <hr>
+    <div>
+        <label for="">Your birthday</label>
+        <input type="date" name="dob" id="dob" value="2000-12-25" required>
+    </div>
+    <div>
+        <input type="button" value="CHECK" name="btnCHECK" id="btnCHECK">
+    </div>
+</body>
+<script>
+    //lap trinh su kien click tren button co id = [btnCHECK]
+    document.getElementById("btnCHECK").onclick = function(){
+        //lay gia tri thoi gian nhap trong o co id=[dob]
+        let ngay_sinh = document.getElementById('dob').value;
+
+        //tao thanh doi tuong kieu DATE tuong ung
+        let dobNS = new Date(ngay_sinh);
+
+        //lay nam sinh
+        let nam_sinh = dobNS.getFullYear();
+
+        //lay nam hien tai cua dong ho may
+        let nam_ht = new Date().getFullYear();
+
+        //tinh tuoi 
+        let tuoi = nam_ht - nam_sinh;
+
+        if(tuoi<18){
+            alert('Oi gioi, e chua 18 a ???');
+        }
+        else{
+            alert(`Chuc mung, e da ${tuoi} tuoi roi !`)
+        }
+    }
+</script>
+</html>
