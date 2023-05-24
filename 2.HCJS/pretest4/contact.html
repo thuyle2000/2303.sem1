@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact-us</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .banner {
+            font-size: 2em;
+            text-shadow: 3px 3px 3px gray;
+        }
+
+        header {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-bottom: double medium darkblue ;
+        }
+
+        nav {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            padding-right: 25px;
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        span.label{
+            color: black;
+            font-weight: normal;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div>
+        <header>
+            <div>
+                <img src="image/logo.jpg" alt="">
+                <span class="banner">Amazing Bridges</span>
+            </div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="">World Bridges</a>
+                <a href="">Top Longest</a>
+                <a href="">Top Highest</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+        <section>
+            <h2>Contact us</h2>
+            <form action="" name="formCONTACT" id="formCONTACT">
+                <p>Your detail</p>
+                <div>
+                    <label for="">name</label>
+                    <input type="text" name="name" id="name" required value="aptech"><span>*</span>
+                </div>
+                <div>
+                    <label for="">email</label>
+                    <input type="email" name="ename" id="ename" required value="aptech@gmail.commodi"><span>*</span>
+                </div>
+
+                <p>Your review </p>
+                <div>
+                    <span class="label           ">how did you hear ablout us ?</span>
+                    <select>
+                        <option value="Google">Google</option>
+                        <option value="Friend">Friend</option>
+                        <option value="Advert">Advert</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <span class="label           ">would you visit again ?</span>
+
+                    <input type="radio" name="visit" id="yes" value="yes" checked> Yes 
+                    <input type="radio" name="visit" id="no" value="no" > No 
+                    <input type="radio" name="visit" id="maybe" value="maybe" > Maybe
+                </div>
+
+                <div>
+                    <span class="label">Comment</span> <br>
+                    <textarea name="comment" id="comment" cols="30" rows="5">nothing...</textarea>
+                </div>
+                <div>
+                    <input type="checkbox" name="signup" id="signup" value="signup" checked> sign me up for email update
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+        <footer>
+            Copyright &copy; by ABC Team, May 2023
+        </footer>
+    </div>
+</body>
+<script>
+document.getElementById("formCONTACT").onsubmit = function(e){
+    e.preventDefault(); //huy chuc nang chuyen trang action
+
+    // alert("Hi");
+
+    let a =["Summary"];
+    let name = document.getElementById("name").value;
+    a.push(`Name = ${name}`);
+
+    let email = document.getElementById("ename").value;
+    a.push(`Email = ${email}`);
+
+    let comment = document.getElementById("comment").value;
+    a.push(`Comment = ${comment}`);
+    
+    let visit = formCONTACT.visit.value;
+    a.push(`Visit again = ${visit}`);
+
+    alert(a.join("\n"));
+}
+</script>
+</html>
