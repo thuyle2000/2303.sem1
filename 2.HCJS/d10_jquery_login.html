@@ -66,18 +66,14 @@
             //lay du lieu trong o nhap password
             let mk = $("#pwd").val();
 
-            console.log(`id= ${tk}, pass= ${mk}`);
-
             //kiem tra
             if(tk=="aptech" && mk=="123"){
                 alert("Congratulation !");
-
             }
             else{
                 alert("Login failed !");
                 $("#uid").focus();
                 e.preventDefault();
-
             }
             
         });
