@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+
+    <!-- nhung thu vien jquery -->
+    <script src="js/jquery-3.7.0.min.js"></script>
+
+
+    <!-- nhung thu vien css bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>jQuery Demo</h2>
+        <hr>
+
+        <button class="btn btn-danger">Show/Hide</button>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, alias! Ex, minima dignissimos cumque
+            maxime
+            illum harum velit non? Velit magni perferendis atque sed provident architecto dolorem minus quisquam iste!
+            <br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, libero ullam? Nisi voluptatibus ex quasi
+            deserunt?
+            Dicta, dolor fugiat. Sequi perspiciatis quisquam quos excepturi consequuntur repellat magnam dolor unde
+            esse!
+            <br>
+            Beatae dolorum perspiciatis ratione quo quae veritatis adipisci ex magni, incidunt possimus, quia,
+            doloremque
+            dolorem reprehenderit quas at rerum cupiditate pariatur! Alias nemo nesciunt ipsam iure nisi officiis
+            asperiores
+            voluptates? <br>
+            Eius recusandae nostrum necessitatibus incidunt, quaerat aspernatur similique quibusdam? Error, at in
+            suscipit
+            sint odio hic nisi minima ipsam alias vero reiciendis quisquam autem delectus commodi et omnis, atque totam?
+            Excepturi voluptatibus quidem sed voluptatem, recusandae voluptas, nobis et molestias fuga corrupti,
+            laboriosam
+            commodi vero unde vitae eius fugiat cum reiciendis ipsum voluptatum provident! Earum ex nisi aperiam saepe
+            eaque.
+        </p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga deserunt dicta, officia impedit molestiae ea
+            animi
+            ipsa asperiores delectus autem aliquid accusamus facilis ab repellendus harum! Quia nobis illum quibusdam.
+        </p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque animi voluptate impedit at, dolorum ipsum
+            voluptatem numquam modi temporibus praesentium debitis obcaecati iure odit dicta aliquam accusamus quis, nam
+            ex!
+            Ea, dolorem ipsum? Facere veritatis ex deleniti, consectetur sapiente sit maiores? Error sapiente sed fugit
+            delectus quaerat labore placeat quidem repudiandae totam numquam. Ipsum aut debitis aperiam rerum, tempora
+            distinctio?</p>
+
+    </div>
+</body>
+
+<script>
+    //ma lenh jquery se thuc hien sau khi trang web duoc load va render thanh cong trong browser
+    $(document).ready(function () {
+
+        //lap trinh cho su kien click tren button co nhan [show/hide]
+        $("button").click(function (e) {
+            $("p").toggle(1000);
+        });
+    });
+
+
+</script>
+
+</html>
