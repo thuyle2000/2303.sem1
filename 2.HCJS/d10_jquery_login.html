@@ -24,7 +24,7 @@
 
         <div class="row">
             <div class="col-md-6">
-                <form action="">
+                <form action="d10_jquery_1.html" name="formLOGIN" id="formLOGIN">
                     <div class="form-group">
                       <label for="">username</label>
                       <input type="text"
@@ -53,6 +53,36 @@
 
     </div>
 </body>
+<script>
+    //lap trinh jquery
+    $(function () {
+        //lap trinh cho su kien submit tren form login
 
+        $("#formLOGIN").submit(function (e) { 
+            
+            //lay du lieu trong o nhap username
+            let tk = $("#uid").val();
+
+            //lay du lieu trong o nhap password
+            let mk = $("#pwd").val();
+
+            console.log(`id= ${tk}, pass= ${mk}`);
+
+            //kiem tra
+            if(tk=="aptech" && mk=="123"){
+                alert("Congratulation !");
+
+            }
+            else{
+                alert("Login failed !");
+                $("#uid").focus();
+                e.preventDefault();
+
+            }
+            
+        });
+
+    });
+</script>
 
 </html>
