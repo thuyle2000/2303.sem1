@@ -47,11 +47,11 @@ input[type=button] {
     font-weight: bold;
     background-color: dodgerblue;
 }
-
+button[type=submit],
 input[type=submit] {
     background-color: red;
 }
-
+button[type=reset],
 input[type=reset] {
     background-color: blue;
 }

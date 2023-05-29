@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pretest2-register</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <style>
+        label {
+            width: 150px;
+            text-align: right;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Register</h2>
+    <hr>
+
+    <form action="" name="FORM_REG" id="FORM_REG">
+        <div><label for="">login name</label>
+            <span>*</span>
+            <input type="text" name="uid" id="uid" required value="minh">
+        </div>
+        <div><label for="">password</label>
+            <span>*</span>
+            <input type="password" name="pass" id="pass" required value="124">
+        </div>
+        <div><label for="">password confirm</label>
+            <span>*</span>
+            <input type="password" name="pass2" id="pass2" required value="124">
+        </div>
+        <div><label for="">fullname</label>
+            <span>*</span>
+            <input type="text" name="fname" id="fname" required value="le minh lee">
+        </div>
+        <div><label for="">address</label>
+            <span>*</span>
+            <input type="text" name="add" id="add" required value="binh thanh">
+        </div>
+        <div><label for="">email</label>
+            <span>*</span>
+            <input type="email" name="email" id="email" required value="minh@gmail.com">
+        </div>
+
+        <div><label for="">gender</label>
+            <input type="radio" name="gender" checked value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+        </div>
+
+        <div><label for="">birthday</label><input type="date" name="dob" id="dob" value="2000-12-25"></div>
+
+        <div><label for="">country</label>
+            <select name="country" id="country" required>
+                <option value="sai-gon">Saigon</option>
+                <option value="ha-noi">Hanoi</option>
+                <option value="hue" selected>Hue</option>
+                <option value="phan-thiet">Phanthiet</option>
+                <option value="da-lat">Dalat</option>
+                <option value="da-nang">Danang</option>
+            </select>
+        </div>
+
+        <div><label for="">Phone</label><input type="text" name="phone" id="phone"></div>
+
+        <div><label for="">Hobbies</label>
+            <input type="checkbox" name="hob_swim" id="hob_swim" value="swimming" checked class="hob"> swimming
+            <input type="checkbox" name="hob_dance" id="hob_dance" value="dancing" checked class="hob"> dancing
+            <input type="checkbox" name="hob_code" id="hob_code" value="coding" class="hob" > coding
+        </div>
+
+        <div><label for="">comment</label>
+            <textarea name="comment" id="comment" cols="30" rows="5">nothing...</textarea>
+        </div>
+
+        <div style="text-align: center; padding: 10px;">
+            <button type="submit">Submit</button><button type="reset">Reset</button>
+        </div>
+    </form>
+</body>
+<script>
+    document.getElementById("FORM_REG").onsubmit = function (e) {
+        e.preventDefault();
+
+        let a = ["Informatiom Summary"];
+
+        let uid = document.getElementById("uid").value;
+        if(uid.trim().length==0){
+            alert(" >> login cannot empty !");
+            document.getElementById("uid").focus();
+            return false;
+        }
+        a.push(`- login name: ${uid}`);
+
+        let pass1 = document.getElementById("pass").value;
+        let pass2 = document.getElementById("pass2").value;
+
+        if(pass1!==pass2){
+            alert(" >> password and password confirm must be the same ! !");
+            document.getElementById("pass2").focus();
+            return false;            
+        }
+
+        a.push(`- password: ${pass1}`);
+
+        let fname = document.getElementById("fname").value;
+        a.push(`- full name: ${fname}`);
+
+        let address = document.getElementById("add").value;
+        a.push(`- address: ${address}`);
+
+        let email = document.getElementById("email").value;
+        a.push(`- email: ${address}`);
+
+        let gender = FORM_REG.gender.value;
+        a.push(`- gender: ${gender}`);
+
+        let dob = document.getElementById("dob").value;
+        a.push(`- birthday: ${dob}`);
+
+        let country = document.getElementById("country").value;
+        a.push(`- country: ${country}`);
+
+        let phone = document.getElementById("phone").value;
+        a.push(`- phone: ${phone}`);
+
+        let comment = document.getElementById("comment").value;
+        a.push(`- comment: ${comment}`);
+
+        let hobbies = [];
+        // let markedHobbies = document.querySelectorAll('input[type="checkbox"]:checked');
+        let markedHobbies = document.querySelectorAll('.hob:checked');
+        for (var checkbox of markedHobbies) {
+            hobbies.push(checkbox.value);
+        }
+        a.push("- hobbies: " + hobbies.join(", "));
+
+
+        alert(a.join("\n"));
+
+
+    }
+</script>
+
+</html>

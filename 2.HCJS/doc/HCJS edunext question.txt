@@ -2,25 +2,25 @@ LINK EDUNEXT: https://fai-edunext.fpt.edu.vn/home
 
 
 s21+s22 (Tue, 29-May-2023)
-		G1: 1+2	/ G6
-		G2: 3	/ G7
-		G3: 4	/ G1
-		G4: 5	/ G2
-		G5: 6	/ G3
-		G6: 7	/ G4
-		G7: 8	/ G5
+		G1: 1a+1b	/ G6
+		G2: 2	/ G7
+		G3: 3	/ G1
+		G4: 4	/ G2
+		G5: 5	/ G3
+		G6: 6	/ G4
+		G7: 7	/ G5
 
 s21 - Mobile Web app
-	1/ List of mobile Platforms?
-	2/ Design Aspects of Mobile Web Site ? Architectural Aspects of Mobile Web Site?
- 	3/ Explain Heading Structure? Explain Document Structure?
-	4/ Explain Css for mobile? How to Optimizing a Site for a Mobile?
+	1a/ List of mobile Platforms?
+	1b/ Design Aspects of Mobile Web Site ? Architectural Aspects of Mobile Web Site?
+ 	2/ Explain Heading Structure? Explain Document Structure?
+	3/ Explain Css for mobile? How to Optimizing a Site for a Mobile?
 
 s22 - Canvas & javascript
-	5/ Explain Canvas Element? 
-	6/ How to working with Drawing Object?
-	7/ How to use canvas with image, with text? How to use Transparency for Text in Canvas?
-	8/ How to use Event with jQuery? 
+	4/ Explain Canvas Element? 
+	5/ How to working with Drawing Object?
+	6/ How to use canvas with image, with text? How to use Transparency for Text in Canvas?
+	7/ How to use Event with jQuery? 
 
 ==============================================================================================
 s23+24 (Thu, 31-May-2023 )
