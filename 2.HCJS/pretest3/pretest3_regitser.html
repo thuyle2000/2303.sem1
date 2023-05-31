@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h2>Student Information </h2>
+    <hr>
+    <form action="" id="formSTUDENT" name="formSTUDENT">
+        <div><label for="">name</label>
+            <input type="text" id="name" name="name" value="le minh ho" required
+            pattern="[a-z A-Z]{6,30}">
+        </div>
+        <div><label for="">gender</label>
+            <input type="radio" name="gender" id="gender_male" value="male" checked> male -
+            <input type="radio" name="gender" id="gender_female" value="female"> female
+        </div>
+        <div><label for="">address</label>
+            <input type="text" name="address" id="address" value="590 CMT8, Q3, HCMC" required>
+        </div>
+        <div><label for="">email</label>
+            <input type="email" name="email" id="email" value="minh@gmail.com" required>
+        </div>
+        <div><label for="">phone</label>
+            <input type="text" name="phone" id="phone" pattern="\d{3}-\d{5,8}" value="113-12345" required>
+        </div>
+        <div><label for="">qualification</label>
+            <select name="qualification" id="qualification">
+                <option value="Bachelor degree">Bachelor degree</option>
+                <option value="Master">Master</option>
+                <option value="PhD">PhD</option>
+                <option value="None">None</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <button type="submit">submit</button>
+            <button type="reset">reset</button>
+        </div>
+    </form>
+</body>
+
+<script>
+document.getElementById("formSTUDENT").onsubmit = function(e){
+    e.preventDefault();
+
+    //tao mang chua du lieu nhap
+    let a=[`\<h2 style='color:red'>Student Information Successful Registration</h2><hr>`];
+
+    a.push(`<style> 
+        span{display:inline-block; width:100px; color:green; font-weight:bold;}
+        *{font-family: 'Segoe UI';}
+    } </style>`);
+
+
+    //lay du lieu cua tung o nhap
+    let name = document.getElementById("name").value;
+    a.push(`<span> Name </span> ${name}`);
+
+    let gender = formSTUDENT.gender.value;
+    a.push(`<span> Gender </span> ${gender}`);
+
+    let add =  document.getElementById("address").value;
+    a.push(`<span> Address </span> ${add}`);
+
+
+
+    //===========
+    a.push(`<p><a href='pretest3_regitser.html'>Click here to return Student Page</a></p>`);
+    //===========
+
+    //xuat du lieu nhap ben trang moi
+    let new_win = window.open();
+    let new_doc = new_win.document;
+    new_doc.write(a.join("<br>"));
+
+}
+</script>
+</html>
