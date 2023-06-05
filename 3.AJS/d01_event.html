@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+
+    <!-- nhung thu vien angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- nhung thu vien css bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-app="myApp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h4>BILL ORDER</h4>
+                <hr>
+                <form ng-controller="billCtrl" ng-submit="fn_submit()">
+
+                    <div class="form-group">
+                        <label for="">products</label>
+                        <select class="form-control" name="product" id="product" ng-model="mProduct"
+                            ng-change="fn_change()">
+                            <option>Coca cola</option>
+                            <option>Pepsi cola</option>
+                            <option>Snack</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">unit price</label>
+                        <input type="number" class="form-control" name="price" id="price" ng-model="mPrice" min="0"
+                            max="300" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">quantity</label>
+                        <input type="number" class="form-control" name="qty" id="qty" ng-model="mQty" min="1" max="300"
+                            ng-required="true">
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                        <button type="reset" class="btn btn-info">Reset</button>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <span ng-bind="total" style="color: red;"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var myApp = angular.module('myApp', []);
+
+        //lap trinh cho controller 'billCtrl'
+        myApp.controller("billCtrl", function ($scope) {
+            $scope.mProduct = "Pepsi cola";
+            $scope.mPrice = 9;
+            $scope.total = "";
+            //lap trinh cho su kien thay doi gia 
+            $scope.fn_change = function () {
+                switch ($scope.mProduct) {
+                    case "Coca cola":
+                        $scope.mPrice = 10;
+                        break;
+                    case "Pepsi cola":
+                        $scope.mPrice = 9;
+                        break;
+                    case "Snack":
+                        $scope.mPrice = 12;
+                        break;
+                    default:
+                        break;
+                }
+
+                $scope.total = "";
+            }
+
+
+            //lap trinh cho su kien submit cua form
+            $scope.fn_submit = function () {
+
+                $scope.total = "Total Amount : " + ($scope.mPrice * $scope.mQty);
+
+
+            }
+
+
+
+
+
+        });
+
+    </script>
+</body>
+
+</html>
