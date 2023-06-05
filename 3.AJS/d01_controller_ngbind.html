@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>controller</title>
+    <!-- nhung thu vien angularjs -->
+    <script src="js/angular.min.js"></script>
+
+    <!-- nhung thu vien css bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container" ng-app="hungAPP" ng-controller="hungCtrl">
+        <h2>AngularJS Introduction <small>ver 4.0</small></h2>
+        <hr>
+
+        <div>
+            <label for="">First name</label>
+            <input type="text" name="fname" ng-model="mTen" placeholder="nhap ten" >
+        </div>
+
+        <div>
+            <label for="">Last name</label>
+            <input type="text" name="lname" ng-model="mHo" placeholder="nhap ho"  >
+        </div>
+
+        <div>
+            <p>Xin chao <span ng-bind="mHo +' ' + mTen" style="color: red;"></span> !  </p>
+        </div>
+    </div>
+
+    <script>
+        let hungAPP = angular.module('hungAPP', []);
+        hungAPP.controller("hungCtrl", function($scope){
+            //khoi tao gia tri 2 bien mTen, mHo
+            $scope.mTen = "Hung Kute";
+            $scope.mHo = "Nguyen";
+        });
+    </script>
+</body>
+
+</html>
