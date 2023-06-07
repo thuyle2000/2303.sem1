@@ -31,13 +31,62 @@
             <a href="#!menu3">Add New Student</a>
         </nav>
 
-        <!-- khoi hien thi cac trang chuc nang -->
-        <div ng-view></div>
+        <div class="row">
+            <div class="col-md-8">
+                <!-- khoi hien thi cac trang chuc nang -->
+                <div ng-view></div>
+            </div>
+
+            <div class="col-md-4">
+                <img src="images/pho-hoi-tho-da.jpg" alt="" style="width: 99%;">
+            </div>
+        </div>
+
 
         <footer style="color: red; text-align: center; border-top: solid thin salmon; padding-top: 10px;">
             copyright by &copy; Team 2303. Aptech HCMC.
         </footer>
     </div>
 </body>
+
+<script>
+    var app = angular.module("myApp", ["ngRoute"]);
+    app.config(function ($routeProvider) {
+        $routeProvider
+            .when("/", {
+                // templateUrl: "main.htm"
+            })
+            .when("/menu1", {
+                templateUrl: "d02_route_intro.html"
+            })
+            .when("/menu2", {
+                templateUrl: "d02_route_list.html"
+            })
+            .when("/menu3", {
+                templateUrl: "d02_route_add.html"
+            });
+    });
+
+    //lap trinh cho controller [mainCtrl]
+    app.controller("mainCtrl", function ($scope) {
+
+    });
+
+    //lap trinh cho controller [listCtrl]
+    app.controller("listCtrl", function ($scope) {
+        //khai bao bien mang JSON [ds] chua danh sach cac doi tuong sinh vien.
+        //moi doi tupng sinh vien bao gom cac thuoc tinh: id, name, dob, gender.
+        $scope.ds = [
+            { "id": "S01", "name": "Le tan Thanh", "dob": "2000-09-30", "gender": "nam" },
+            { "id": "S02", "name": "Nguyen Anh Khoa", "dob": "2002-08-20", "gender": "nam" },
+            { "id": "S03", "name": "Truong Thi", "dob": "1999-09-09", "gender": "nam" },
+            { "id": "S04", "name": "Nguyen Ngoc Nhung", "dob": "2006-03-25", "gender": "nu" },
+            { "id": "S05", "name": "Nguyen Minh Tuan", "dob": "2002-04-01", "gender": "nam" },
+            { "id": "S06", "name": "Cong Tang Ton Nu Thi Be Hung", "dob": "2005-12-25", "gender": "nu" }
+        ];
+
+    });
+
+</script>
 
 </html>
