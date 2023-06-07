@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>routing</title>
+
+    <!-- nhung thu vien angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- nhung thu vien angular route -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+
+
+    <!-- nhung thu vien css bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-app="myApp">
+    <div class="container" ng-controller="mainCtrl">
+        <h2>AngularJS Routing Demo</h2>
+        <hr>
+
+        <!-- menu -->
+        <nav>
+            <a href="#/!">Main</a> |
+            <a href="#!menu1">Introduction</a> |
+            <a href="#!menu2">Student List</a> |
+            <a href="#!menu3">Add New Student</a>
+        </nav>
+
+        <!-- khoi hien thi cac trang chuc nang -->
+        <div ng-view></div>
+
+        <footer style="color: red; text-align: center; border-top: solid thin salmon; padding-top: 10px;">
+            copyright by &copy; Team 2303. Aptech HCMC.
+        </footer>
+    </div>
+</body>
+
+</html>
