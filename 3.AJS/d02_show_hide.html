@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show-hide</title>
+    <!-- nhung thu vien angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- nhung thu vien css bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-app>
+    <div class="container">
+        <h3>show-hide angularJS demo</h3>
+        <hr>
+
+        <div class="row" >
+
+
+
+            <div class="col-md-4" style="background-color: antiquewhite;">
+                <div>
+                    <input type="checkbox" name="v1" ng-model="m1"> show babe
+                </div>
+                <div>
+                    <img src="images/truong baby.jpg" alt="truong mama" style="width: 100%;" ng-show="m1">
+                </div>
+
+            </div>
+
+            <div class="col-md-8" style="background-color:lightseagreen">
+                <div>
+                    <input type="checkbox" name="v2" ng-model="m2"> hide video
+                </div>
+                <iframe ng-hide="m2"
+                width="100%" height="500px" 
+                src="https://www.youtube.com/embed/0VC6euBtKkk" title="Có Chàng Trai Viết Lên Cây - Phan Mạnh Quỳnh | MẮT BIẾC OST" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>
