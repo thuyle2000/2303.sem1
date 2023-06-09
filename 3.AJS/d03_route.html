@@ -16,6 +16,12 @@
 
     <!-- nhung thu vien css bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <style>
+        a{
+            padding: 15px;
+        }
+    </style>
 </head>
 
 <body ng-app="myApp">
@@ -75,30 +81,56 @@
         $rootScope.ds = [];
         $http.get("d03_data.json").then(function (response) {
             $rootScope.ds = response.data.minh_hoo;
-            console.log($rootScope.ds);
         })
     });
 
     //4. Lap trinh khai bao hoat dong cua controller [listCtrl]
-    app.controller("listCtrl", function($scope){
+    app.controller("listCtrl", function ($scope) {
         //lap trinh cho ham [remove()], khi muon xoa 1 sv co id=[ms]
-        $scope.remove = function(ms){
+        $scope.remove = function (ms) {
             console.log(`ma so = ${ms}`);
 
-            if(confirm('Ban co muon xoa sv nay ko ?')){
+            if (confirm('Ban co muon xoa sv nay ko ?')) {
                 //thuc hien viec xoa du lieu sinh vien
 
                 //tim sv trong mang [ds] co ma so id = 'ms'
                 for (let i = 0; i < $scope.ds.length; i++) {
-                    if($scope.ds[i].id==ms){
-                        $scope.ds.splice(i,1); //ham [splice] se xoa 1 phan tu tai vi tri index [i] ra khoi mang [ds]
+                    if ($scope.ds[i].id == ms) {
+                        $scope.ds.splice(i, 1); //ham [splice] se xoa 1 phan tu tai vi tri index [i] ra khoi mang [ds]
                         alert('Da xoa sinh vien ra khoi danh sach')
                     }
-                    
                 }
+            }
+        }
+    });
 
-           }
 
+    //5. lap trinh khai bao hoat dong cua controller [addCtrl]
+    app.controller("addCtrl", function ($scope) {
+        $scope.mID = "S20";
+        $scope.mName = "Ui gioi oi!";
+        $scope.mDob = "2000-09-12";
+        $scope.mGender = "nu";
+
+        $scope.add = function () {
+            //lay du lieu nhap tren form
+            let id = $scope.mID;
+            let name = $scope.mName;
+            let dob = $scope.mDob;
+            let gender = $scope.mGender;
+            console.log(`gender: ${$scope.mGender}`)
+
+            let newItem = {
+                "id": id, 
+                "name": name, 
+                "dob": dob, 
+                "gender": gender
+            };
+
+            //luu newItem vo mang [ds]
+            $scope.ds.push(newItem);
+
+            alert("Them sinh vien moi thanh cong !");
         }
     });
 

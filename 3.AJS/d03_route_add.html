@@ -1,1 +1,54 @@
-<h3>Add a New Student</h3>
+<div class="container" ng-controller="addCtrl">
+    <style>
+        span.error {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+
+    <h3>Add a New Student</h3>
+
+    <form name="formStudent" ng-submit="add()">
+        <div class="form-group">
+            <label for="">ma so sinh vien</label>
+            <input type="text" class="form-control" name="id" ng-model="mID" placeholder="S[xx], x: ky so"
+                pattern="S\d{2}" required>
+            <span class="error">
+                <span ng-show="formStudent.id.$error.required"> Ma so ko duoc de trong | </span> 
+                <span ng-show="formStudent.id.$invalid"> Ma so ko hop le </span>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="">ho ten sinh vien</label>
+            <input type="text" class="form-control" name="name" ng-model="mName" required placeholder="nhap ho va ten">
+
+            <span class="error">
+                <span ng-show="formStudent.name.$error.required"> Ho ten ko duoc de trong </span>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="">ngay sinh</label>
+            <input type="date" class="form-control" name="dob" ng-model="mDob" required>
+
+            <span class="error">
+                <span ng-show="formStudent.dob.$error.required"> Ngay sinh ko duoc de trong </span>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="">gioi tinh</label>
+            <input type="radio" class="form-check-inline" name="gender" ng-model="mGender" value="nam" ng-checked="true">
+            Nam
+            <input type="radio" class="form-check-inline" name="gender" ng-model="mGender" value="nu"> Nu
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-danger"
+            ng-disabled="formStudent.$invalid">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+    </form>
+
+</div>

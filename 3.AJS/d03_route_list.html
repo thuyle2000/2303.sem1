@@ -33,7 +33,7 @@
                 <td>{{$index+1}}</td>
                 <td>{{item.id}}</td>
                 <td>{{item.name}}</td>
-                <td>{{item.dob}}</td>
+                <td>{{item.dob  | date: 'dd/MMM/yyyy'}}</td>
                 <td>{{item.gender}}</td>
                 <td><a href="" class="btn btn-info" ng-click="remove(item.id)">xoa</a></td>
             </tr>
