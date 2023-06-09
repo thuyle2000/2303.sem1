@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>directive</title>
+
+    <!-- nhung thu vien angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- nhung thu vien angular route -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+
+
+    <!-- nhung thu vien css bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <style>
+        a{
+            color: red;
+            padding-left: 15px;
+            padding-right: 15px;
+            transition: all 2s;
+            font-weight: bold;
+        }
+
+        a:hover{
+            text-decoration: none;
+            color:aquamarine;
+            
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+<div class="container">
+    <h3> AngularJS Custom-Directive Demo </h3>
+    <hr>
+
+    <!-- su dung custom-directive [myMenu] -->
+    <my-menu></my-menu>
+</div>
+</body>
+
+<script>
+    var myApp = angular.module('myApp', []);
+
+    //thiet ke custom-directive, hoat dong nhu 1 thanh menu
+    myApp.directive("myMenu", function () {
+        return {
+            restrict: "E",
+            template: `<nav><a href="#">Home</a> | <a href="#">Product</a> | <a href="#">Gallery</a> | <a href="#">About us</a></nav>`
+        }
+    });
+
+
+
+</script>
+
+</html>

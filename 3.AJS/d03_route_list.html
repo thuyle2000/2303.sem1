@@ -1,0 +1,42 @@
+
+<div class="container-fluid" ng-controller="listCtrl">
+    <h3>Danh sach sinh vien</h3>
+    <hr>
+
+    <div class="form-group">
+        <label for="">search by name </label>
+        <input type="text" name="search" ng-model="msearch" placeholder="nhap ten muon tim ">
+        <label for="">sort by : </label>
+        <select name="sort" ng-model="msort">
+            <option value="id">so thu tu</option>
+            <option value="name">ho ten</option>
+            <option value="dob">ngay sinh</option>
+            <option value="gender">gioi tinh</option>
+        </select>
+    </div>
+
+    <table class="table table-hover table-striped table-responsive">
+        <!-- khu vuc tieu de bang -->
+        <thead>
+            <tr>
+                <th>so tt</th>
+                <th>ma so</th>
+                <th>ho ten</th>
+                <th>ngay sinh</th>
+                <th>gioi tinh</th>
+                <th>xu ly</th>
+            </tr>
+        </thead>
+        <!-- khu vuc du lieu -->
+        <tbody>
+            <tr ng-repeat="item in ds|filter:{name:msearch}|orderBy:msort">
+                <td>{{$index+1}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.dob}}</td>
+                <td>{{item.gender}}</td>
+                <td><a href="" class="btn btn-info" ng-click="remove(item.id)">xoa</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

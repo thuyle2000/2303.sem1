@@ -1,0 +1,11 @@
+{
+    "minh_hoo":[
+        { "id": "S01", "name": "Le tan Thanh", "dob": "2000-09-30", "gender": "nam" },
+        { "id": "S02", "name": "Nguyen Anh Khoa", "dob": "2002-08-20", "gender": "nam" },
+        { "id": "S03", "name": "Truong Thi", "dob": "1999-09-09", "gender": "nam" },
+        { "id": "S04", "name": "Nguyen Ngoc Nhung", "dob": "2006-03-25", "gender": "nu" },
+        { "id": "S05", "name": "Nguyen Minh Tuan", "dob": "2002-04-01", "gender": "nam" },
+        { "id": "S06", "name": "Lee Ming Hoo", "dob": "2003-03-03", "gender": "nam" },
+        { "id": "S07", "name": "Tang Ton Nu Be Hung", "dob": "2005-12-25", "gender": "nu" }
+    ]
+}
