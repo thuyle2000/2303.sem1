@@ -1,0 +1,45 @@
+<div class="container" ng-controller="listCtrl">
+    <h3>Project List</h3>
+    <hr>
+
+    <div class="form-group">
+      <label for="">Enter Project Name </label>
+      <input type="text" name="psearch" ng-model="psearch"> 
+    </div>
+
+    <div class="form-check form-check-inline">
+        <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="pstatus" ng-model="pstatus" value="true">active 
+
+            <input class="form-check-input" type="radio" name="pstatus" ng-model="pstatus" value="false">de-active 
+
+            <input class="form-check-input" type="radio" name="pattern" ng-model="pstatus" value="" ng-init="pstatus=''">all
+        </label>
+    </div>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <th>No</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Active</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <!-- <tr ng-repeat="item in ds|filter:{name:msearch}|orderBy:msort"></tr> -->
+            <tr ng-repeat="item in ds|filter:{name:psearch}|filter:{active:pstatus}">
+                <td> {{$index+1}} </td>
+                <td> {{item.id}}</td>
+                <td> {{item.name}}</td>
+                <td> {{item.type}}</td>
+                <td> {{item.active}}</td>
+                <td> <button class="btn btn-info" type="button" ng-click="remove(item.id)"> delete </button> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+
+</div>

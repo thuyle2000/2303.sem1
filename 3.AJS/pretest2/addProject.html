@@ -1,0 +1,54 @@
+<div class="container" ng-controller="addCtrl">
+    <style>
+        .error{
+            color: red;
+            font-style: italic;
+        }
+    </style>
+
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Add new Project </h3>
+            <hr>
+            <form name="formADD" ng-submit="add()">
+                <div class="form-group">
+                    <label for="">Enter Project ID </label>
+                    <input type="text" name="pID" ng-model="pID" 
+                    pattern="P\d{2}" required  placeholder="Pxx, x:digit"> <br>
+                    <span class="error" ng-show="formADD.pID.$error.required">ID cannot be blank, </span>
+                    <span class="error" ng-show="formADD.pID.$invalid">ID must have format Pxx, x:digit</span> <br>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Enter Project Name </label>
+                    <input type="text" name="pName" ng-model="pName" ng-minlength="3"
+                    required > <br>
+                    <span class="error" ng-show="formADD.pName.$error.required">Name is required, </span>
+                    <span class="error" ng-show="formADD.pName.$invalid">Name has 3-characters, at least</span> <br>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Enter Project Type </label>
+                    <input type="text" name="pType" ng-model="pType" 
+                    required > <br>
+                    <span class="error" ng-show="formADD.pType.$error.required">Type is required</span> <br>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" 
+                        name="pActive" ng-model="pActive" value="true" ng-init="pActive=true"> active
+                    </label>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-danger" ng-disabled="formADD.$invalid"
+                    >Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>

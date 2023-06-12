@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index-project</title>
+
+    <!-- nhung thu vien angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- nhung thu vien angular route -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+
+
+    <!-- nhung thu vien css bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <style>
+        a {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <div class="container">
+        <h2>Aptech WorldWide Control Panel</h2>
+
+        <!-- menu chinh cua cac trang -->
+        <nav>
+            <a href="#/!">home</a> |
+            <a href="#!menu1">project list</a> |
+            <a href="#!menu2">add project</a> |
+            <a href="#!menu3">about us</a>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-8">
+                <!-- khoi hien thi cac trang chuc nang -->
+                <div ng-view></div>
+            </div>
+
+            <div class="col-md-4">
+                <img src="../images/pho-hoi-tho-da.jpg" alt="" style="width: 99%;">
+            </div>
+        </div>
+
+        <!-- tieu de chan cua cac trang -->
+        <footer style="color: red; text-align: center; border-top: solid thin salmon; padding-top: 10px;">
+            copyright by &copy; Team 2303. Aptech HCMC.
+        </footer>
+    </div>
+</body>
+
+<script>
+    //1. khai bao bien main module [app] cua ung dung AJS
+    var app = angular.module("myApp", ["ngRoute"]);
+
+    //2. cau hinh [$routeProvider], de dieu khien viec chon trang xuat hien trong khoi [ng-view] 
+    app.config(function ($routeProvider) {
+        $routeProvider
+            .when("/", {
+                // templateUrl: "d03_route_home.html"
+            })
+            .when("/menu1", {
+                templateUrl: "project.html"
+            })
+            .when("/menu2", {
+                templateUrl: "addProject.html"
+            })
+            .when("/menu3", {
+                // templateUrl: "d03_route_contact.html"
+            });
+    });
+
+
+    //3. Tim doc du lieu tu tap tin [d03_data.json] va luu vo bien [data] cua ung ung
+    app.run(function ($rootScope, $http) {
+        $rootScope.ds = [];
+        $http.get("project.json").then(function (response) {
+            $rootScope.ds = response.data.ds;
+        })
+    });
+
+    //4. Lap trinh khai bao hoat dong cua controller [listCtrl]
+    app.controller("listCtrl", function ($scope) {
+        //lap trinh cho ham [remove()], khi muon xoa 1 sv co id=[ms]
+        $scope.remove = function (ms) {
+            console.log(`ma so = ${ms}`);
+
+            if (confirm('Ban co muon xoa sv nay ko ?')) {
+                //thuc hien viec xoa du lieu sinh vien
+
+                //tim sv trong mang [ds] co ma so id = 'ms'
+                for (let i = 0; i < $scope.ds.length; i++) {
+                    if ($scope.ds[i].id == ms) {
+                        $scope.ds.splice(i, 1); //ham [splice] se xoa 1 phan tu tai vi tri index [i] ra khoi mang [ds]
+                        alert('Da xoa sinh vien ra khoi danh sach')
+                    }
+                }
+            }
+        }
+    });
+
+
+    //5. lap trinh khai bao hoat dong cua controller [addCtrl]
+    app.controller("addCtrl", function ($scope) {
+        $scope.pID = "P20";
+        $scope.pName = "Java Development";
+        $scope.pType = "EDU";
+        $scope.pActive = true;
+
+        $scope.add = function () {
+            //lay du lieu nhap tren form
+            let id = $scope.pID;
+            let name = $scope.pName;
+            let type = $scope.pType;
+            let active = $scope.pActive;
+            
+            let newItem = {
+                "id": id, 
+                "name": name, 
+                "type": type, 
+                "active": active
+            };
+
+            //luu newItem vo mang [ds]
+            $scope.ds.push(newItem);
+
+            alert("Them project moi thanh cong !");
+        }
+    });
+
+</script>
+
+
+</html>
