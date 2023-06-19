@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .avat {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <img class='avat' id='avat' src='images/pho-hoi-tho-da.jpg' alt='img'>
+    <input type='file' id='inpfile' accept=".jpg">
+
+    <br><br>
+    <input type="file" id="MyImage" accept="image/png, image/jpeg" multiple />
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        var imgavat = $('#avat');
+        var inpfile = $('#inpfile');
+
+        inpfile.on('change', function () {
+            console.log(this.files)
+            if (this.files[0]) {
+                var reader = new FileReader();
+
+                reader.readAsDataURL(this.files[0]);
+
+                reader.onloadend = function () {
+                    imgavat.attr('src', reader.result);
+                };
+            }
+        });
+
+        $('#MyImage').on('change',function () {
+            console.log(this.files)
+            // Get the first file in the FileList object
+            var imageFile = this.files[0];
+            // get a local URL representation of the image blob
+            var url = window.URL.createObjectURL(imageFile);
+            // Now use your newly created URL!
+            imgavat.attr('src',  url );
+            
+        });
+
+    });
+</script>
+
+</html>
