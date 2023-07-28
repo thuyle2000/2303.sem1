@@ -1,0 +1,41 @@
+He thong quan ly ho so sinh vien
+1. thuc the: khoa hoc, lop hoc, sinh vien, mon hoc, ket qua thi
+
+2. quan he: 
+	- 1 khoa hoc "co" nhieu lop hoc
+	- 1 lop hoc "co" nhieu sinh vien (1 sinh vien "dang ky" 1 lop hoc)
+    	- 1 khoa hoc "bao gom" nhieu mon hoc
+	- 1 sinh vien co ket qua thi cua 1 mon hoc duoc "ghi vao" bang ket qua thi
+
+3. thuoc tinh cua cac thuc the:
+	- khoa hoc: ma khoa hoc, ten, so hoc ky, hoc phi
+	- lop hoc: ma lop, thoi gian hoc, si so, ngay bat dau, khoa hoc
+	- sinh vien: ma sv, ho ten, gioi tinh, ngay sinh, email, dc, 
+		        phone, tnhom, lop
+   	- mon hoc: ma mon hoc, ten mon hoc, thoi gian, hoc phi, khoa hoc
+    	- ket qua thi: ma bai thi, ma sinh vien, mon hoc, diem
+
+4. mien gia tri cua cac thuoc tinh:
+	- hoc phi cua khoa hoc: 500-2500
+	- so hoc ky khoa hoc: 1-6
+	- si so lop hoc: 10-25
+	- gioi tinh: nam / nu / ko xd
+	- thoi gian hoc cua 1 mon hoc: 4-60
+	- hoc phi cua 1 mon hoc : 0 - 500 
+	- diem thi: 0-100
+
+5. khoa:
+	- khoa hoc: ma khoa hoc -> PK
+	- lop hoc: ma lop hoc -> PK, khoa hoc -> FK
+	- sinh vien: CK: ma sv, email, phone -> PK: ma sv
+	- mon hoc: ma mon hoc -> PK
+ 	- ket qua thi: ma bai thi -> PK
+
+8. giao tac/thao tac (CRUD : Create-Retrieve-Update-Delete)
+
+
+
+	
+
+
+	
