@@ -88,7 +88,7 @@ create table tbStudent (
 )
 go
 
-select * from tbBatch
+select * from tbBatchCONSTRAINT FK_StudentBatch FOREIGN KEY (Batch) REFERENCES tbBatch(Batch_id), -- dn khoa ngoai
 select * from tbStudent
 go
 
@@ -102,7 +102,6 @@ INSERT tbStudent VALUES
 ('sv05','Bui Tran Nguyen Hung',1, '05/11/2001','hung@fpt.edu.vn','T1.2303.M0', 'sv04'),
 ('sv06','Nguyen Quang Linh',1, '20/10/1998','linh@fpt.edu.vn','T1.2303.M0', 'sv04'),
 ('sv07','Vu Minh Tuan',1, '24/02/1997','tuan@fpt.edu.vn','T1.2303.M0', null),
-('sv08','Chu Quoc Huy',1, '10/06/2005','huy@fpt.edu.vn','T1.2303.M0', 'sv07'),
 ('sv09','Bui My Nhung',0, '10/10/2006','nhung@fpt.edu.vn','T1.2303.M0', 'sv07'),
 ('sv10','Ta Hai Luong',1, '20/08/1998','lookso@fpt.edu.vn','T1.2303.M0', null),
 ('sv11','Nguyen Khanh Danh',1, '17/02/2001','danh@fpt.edu.vn','T1.2303.M0', 'sv10'),
@@ -120,5 +119,133 @@ INSERT tbStudent VALUES
 ('sv23','Dao Qui Phi',0, '26/04/2002','phi@fpt.edu.vn','T1.2104.E1', 'sv21')
 go
 
+SET DATEFORMAT DMY
+INSERT tbStudent VALUES
+('sv01','Ha The Doanh',1, '18/03/2003','doanh@fpt.edu.vn','T1.2303.M0', null),
 select * from tbStudent
+go
+
+
+--6. Tao bang mon (tbModule)
+create table tbModule (
+	module_id varchar(5) not null,
+	module_name varchar(40) not null unique,
+	fee smallint,
+	active bit not null default 1,
+	CONSTRAINT PK_Module PRIMARY KEY NONCLUSTERED (module_id), --dn khoa chinh.
+	CONSTRAINT CK_fee_module CHECK (fee BETWEEN 0 AND 300)
+)
+go
+
+-- nhap du lieu cho bang mon hoc
+INSERT tbModule VALUES
+('LBEP','Logic building Elementary with C', 200, 1),
+('HCJS','HTML5 - CSS3 - javascript', 210, 1),
+('AJS','Angular 9 and AngularJS', 100, 1),
+('DDD','Database Design Development', 0, 0),
+('PR1','eProject semester 1', 1, 150),
+('DMS','Database Management System', 250, 1)
+
+select * from tbModule
+go
+
+-- sua lai du lieu cua mon 'PR1'
+UPDATE tbModule SET fee=150, active=1 WHERE module_id LIKE 'PR1'
+select * from tbModule
+go
+
+
+--7. Tao bang luu ket qua thi (tbExam)
+create table tbExam (
+    exam_id int identity(100,1) not null, -- identity : so thu tu tang tu dong, 100: bat dau tu 100
+	module varchar(5) not null,
+	student varchar(10) not null,
+	mark tinyint,
+	CONSTRAINT PK_Exam PRIMARY KEY NONCLUSTERED (exam_id), --dn khoa chinh.
+	CONSTRAINT FK_ExamStudent FOREIGN KEY (student) REFERENCES tbStudent(roll_no), -- dn khoa ngoai
+	CONSTRAINT FK_ExamModule FOREIGN KEY (module) REFERENCES tbModule(module_id), -- dn khoa ngoai
+	CONSTRAINT CK_mark CHECK (mark BETWEEN 0 AND 100)
+)
+go
+
+-- nhap diem thi cho sv co ma so 'sv01' : luu y, ko nhap du lieu vo cot exam-id
+insert tbExam Values
+('LBEP','sv01', 30),
+('LBEP','sv01', 55),
+('LBEP','sv01', 60),
+('HCJS','sv01', 70),
+('HCJS','sv01', 80),
+('AJS','sv01', 80),
+('AJS','sv01', 0),
+('AJS','sv01', 75)
+
+select * from tbExam
+go
+
+-- nhap diem thi cho sv co ma so 'sv02' : luu y, ko nhap du lieu vo cot exam-id
+insert tbExam Values
+('LBEP','sv02', 30),
+('LBEP','sv02', 50),
+('LBEP','sv02', 65),
+('HCJS','sv02', 40),
+('HCJS','sv02', 65),
+('AJS','sv02', 60),
+('AJS','sv02', 50)
+select * from tbExam
+go
+
+-- nhap diem thi cho sv co ma so 'sv04' : luu y, ko nhap du lieu vo cot exam-id
+insert tbExam Values
+('LBEP','sv04', 75),
+('LBEP','sv04', 30),
+('LBEP','sv04', 65),
+('LBEP','sv04', 25),
+('HCJS','sv04', 75),
+('HCJS','sv04', 80),
+('AJS','sv04', 0),
+('AJS','sv04', 85),
+('AJS','sv04', 75)
+select * from tbExam
+go
+
+-- nhap diem thi cho sv co ma so 'sv07' : luu y, ko nhap du lieu vo cot exam-id
+insert tbExam Values
+('LBEP','sv07', 90),
+('LBEP','sv07', 80),
+('HCJS','sv07', 90),
+('HCJS','sv07', 70),
+('AJS','sv07', 100),
+('AJS','sv07', 70)
+select * from tbExam
+go
+
+
+-- nhap diem thi cho sv co ma so 'sv09' : luu y, ko nhap du lieu vo cot exam-id
+insert tbExam Values
+('LBEP','sv09', 80),
+('LBEP','sv09', 80),
+('HCJS','sv09', 80),
+('HCJS','sv09', 90),
+('AJS','sv09', 50),
+('AJS','sv09', 93)
+select * from tbExam
+go
+
+-- nhap diem thi cho sv co ma so 'sv15' : luu y, ko nhap du lieu vo cot exam-id
+insert tbExam Values
+('LBEP','sv15', 70),
+('LBEP','sv15', 60),
+('AJS','sv15', 80),
+('AJS','sv15', 60)
+select * from tbExam
+go
+
+-- nhap diem thi cho sv co ma so 'sv06' : luu y, ko nhap du lieu vo cot exam-id
+insert tbExam Values
+('HCJS','sv06', 90),
+('HCJS','sv06', 50),
+('AJS','sv06', 0),
+('AJS','sv06', 75),
+('AJS','sv06', 70)
+select * from tbExam
 go
