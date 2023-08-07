@@ -26,3 +26,36 @@ WITH CTE_SVThiC AS
 SELECT * from tbStudent
 	where NOT exists (select * from CTE_SVThiC where roll_no like student)
 GO
+
+
+-- xem ds sv thi ca 2 mon lap trinh C va thiet ke web
+--1. ds sv thi mon C
+select DISTINCT student from tbExam where module like 'LBEP'
+--2. ds sv thi mon thiet ket Web
+select DISTINCT student from tbExam where module like 'HCJS'
+
+--3. ds sv thi du 2 mon
+select DISTINCT student from tbExam where module like 'LBEP'
+INTERSECT
+select DISTINCT student from tbExam where module like 'HCJS'
+GO
+
+-- xem ds sv thi mon lap trinh C nhung ko thi thiet ke web
+select DISTINCT student from tbExam where module like 'LBEP'
+EXCEPT
+select DISTINCT student from tbExam where module like 'HCJS'
+GO
+
+-- xem ds sv thi mon lap trinh C va thiet ke web
+select DISTINCT student from tbExam where module like 'LBEP'
+UNION
+select DISTINCT student from tbExam where module like 'HCJS'
+GO
+
+-- xem ds sv thi mon lap trinh C va thiet ke web (ma sv, ho ten, ngay sinh)
+select Roll_No, Fullname, DoB from tbStudent sv JOIN 
+			( select DISTINCT student from tbExam where module like 'LBEP'
+			  UNION
+			  select DISTINCT student from tbExam where module like 'HCJS'
+			) dsthi ON sv.Roll_No = dsthi.student
+GO
