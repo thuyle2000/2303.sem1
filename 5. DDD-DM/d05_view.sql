@@ -31,3 +31,27 @@ GO
 
 -- test view: xem ds sv thi dau
 select * from vwExam
+GO
+
+/* --- Them 1 nam sinh vo view vwSchoolboy  ---*/
+insert vwSchoolBoy Values('sv50','nguyen van a',1,'2000/09/18', 'a@gmail.com', 'T1.2104.E1', 'sv21')
+GO 
+
+-- xem ds nam sinh
+select * from tbStudent where gender=1
+select * from vwSchoolBoy
+
+/*--- doi ten cua sinh vien 'nguyen van a' -> 'nguyen anh' ---*/
+update vwSchoolBoy set Fullname= 'nguyen anh' where Roll_No like 'sv50'
+
+/*--- xoa sinh vien 'nguyen van a'  ---*/
+delete from vwSchoolBoy where Roll_No like 'sv50'
+
+-- xem ds nam sinh
+select * from tbStudent where gender=1
+select * from vwSchoolBoy
+go
+
+/* xem lai phan dinh nghia view vwEXAM */
+sp_helptext vwExam
+go
