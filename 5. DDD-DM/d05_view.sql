@@ -55,3 +55,63 @@ go
 /* xem lai phan dinh nghia view vwEXAM */
 sp_helptext vwExam
 go
+
+
+
+/*-----------------------------------------------------------
+ * 3. tao view chua chua cac mon hoc dang active, bao gom cac cot:
+ *	  ms ,  ten mon hoc, hoc phi
+ *    tu bang [tbModule]
+ *    va ko cho phep them 1 mon hoc moi co trang thai un-active vao view
+ *-----------------------------------------------------------*/
+create view vwModuleActive as
+	select module_id [ma mon hoc], module_name [ten mon hoc], fee [hoc phi]
+	from tbModule where active=1
+	with check option		--ko cho phep them mon hoc voi trang thai active=0
+go
+
+-- kiem tra view
+select * from vwModuleActive
+go
+
+-- sua lai dinh nghia view, them cot [active]
+alter view vwModuleActive as
+	select module_id [ma mon hoc], module_name [ten mon hoc], fee [hoc phi], active [trang thai]
+	from tbModule where active=1
+	with check option		--ko cho phep them mon hoc voi trang thai active=0
+go
+
+/* TEST CASE */
+-- kiem tra view
+select * from vwModuleActive
+
+-- them 1 mon hoc moi vo view 
+insert vwModuleActive values ('XMJ', 'XML and Json', 120, 1)
+
+-- kiem tra view
+select * from vwModuleActive
+
+-- them 1 mon hoc moi vo view co trang thai = 0 => LOI !!!
+insert vwModuleActive values ('JP1', 'Java Programming I', 200, 0)
+update vwModuleActive set [hoc phi]=100 where [ma mon hoc] like 'JP1'
+
+-- kiem tra view
+select * from vwModuleActive
+
+go
+
+/* demo SP_REFRESHVIEW */
+-- sua lai cau truc bang mon hoc: bo sung them cot so tiet hoc
+alter table tbModule
+	add [hours] tinyint not null default 40 check([hours] between 0 and 64)
+go
+
+select * from tbModule
+-- doi so tiet hoc mon AJS : 20
+update tbModule set [hours] = 20 where module_id like 'AJS'
+select * from tbModule
+
+-- xem du lieu cua view 'vwModuleActive'
+select * from vwModuleActive
+go
+
